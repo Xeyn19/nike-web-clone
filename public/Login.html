@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+
+        }
+        .hidden-alert-login{
+            display: none;
+        } 
+        .hidden-alert-register{
+            display: none;
+        }
+    </style>
+    <title>Register and Login</title>
+</head>
+<body class="">
+    
+<section class="flex justify-center items-center min-h-screen font-serif flex-col bg-bg-nike bg-cover bg-center">
+    <div id="alert" class="alert alert-register alert-error hidden-alert-register w-full">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 shrink-0 stroke-current"
+            fill="none"
+            viewBox="0 0 24 24">
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span id="alert-message">Error! User Account not Matched any.</span>
+    </div>
+    <div class="register-ctn flex flex-col w-[450px] h-96 bg-transparent text-white py-8 px-10 rounded-xl shadow-2xl border border-slate-300" id="register">
+        <form action="">
+            <h1 class="text-center text-2xl my-2 font-bold">Register</h1>
+            <label for="register-email" class="mt-5 block">Email</label>
+            <input type="email" id="register-email" class="w-full px-3 py-2 rounded-lg outline-none my-2 text-black" placeholder="Enter Email">
+            <label for="register-password" class="block mt-2">Password</label>
+            <input type="password" id="register-password" class="w-full px-3 py-2 rounded-lg outline-none my-2 text-black" placeholder="Enter Password">
+            
+            <div class="flex justify-center">
+                <button type="button" class="my-5 py-2 px-8 rounded-lg bg-orange-500 transition-colors ease-in-out duration-500 hover:bg-orange-700" onclick="register();">Submit</button>
+            </div>
+           
+            <p class="text-center my-2 font-bold">If you already have an account
+                <a href="#login" class="hover:text-orange-500 hover:underline underline transition-colors ease-in-out duration-300">Click here.</a>
+            </p>
+        </form>
+    </div>
+</section>
+    <section class="flex justify-center items-center min-h-screen font-serif flex-col gap-10">
+        <div id="alert" class="alert alert-login alert-error hidden-alert-login w-full  px-4 py-2 bg-red-200 text-red-700 border border-red-300 rounded-md shadow-lg flex items-center space-x-3">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 shrink-0 stroke-current hidden md:block"
+                fill="none"
+                viewBox="0 0 24 24">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span id="alert-message">Error! User Account not Matched any.</span>
+        </div>
+        
+        
+        <div class="Login-ctn lex flex-col w-[450px] h-96 bg-slate-300 py-7 px-5 rounded-xl shadow-2xl" id="login">
+            <form action="">
+                <h1 class="text-center text-2xl my-2 font-bold">LOGIN</h1>
+                <label for="login-email" class="mt-5 block">Email</label>
+                <input type="email" id="login-email" class="w-full px-3 py-2 rounded-lg outline-none my-2" placeholder="Enter Email">
+                <label for="login-password" class="block mt-2">Password</label>
+                <input type="password" id="login-password" class="w-full px-3 py-2 rounded-lg outline-none my-2" placeholder="Enter Password">
+
+                <div class="flex justify-center">
+                    <button type="button" class="my-5 py-2 px-8 rounded-lg bg-orange-500 transition-colors ease-in-out duration-500 hover:bg-orange-700" onclick="login();">Submit</button>
+                </div>
+            
+                <p class="text-center">If you Don't have an account
+                    <a href="#register" class="hover:text-orange-500 hover:underline underline transition-colors ease-in-out duration-300">Click here.</a>
+                </p>
+            </form>
+
+        </div>
+    </section>
+    <script>
+        const users = new Map();
+            function register() {
+                const emailField = document.getElementById('register-email');
+                const passwordField = document.getElementById('register-password');
+
+                const emailValue = emailField.value.trim();
+                const passwordValue = passwordField.value.trim();
+
+                if (!emailValue || !passwordValue) {
+                    alert("Both fields are required.");
+                    return;
+                }
+
+                if (users.has(emailValue)) {
+                    alert('Email Already Exists!');
+                    return;
+                }
+
+                users.set(emailValue, passwordValue);
+                alert('User registered successfully.');
+
+                emailField.value = "";
+                passwordField.value = "";
+            }
+
+            function login() {
+                const emailField = document.getElementById('login-email');
+                const passwordField = document.getElementById('login-password');
+                const errorAlert = document.querySelector('.alert-login');
+
+                const emailValue = emailField.value.trim();
+                const passwordValue = passwordField.value.trim();
+             
+
+                if (users.has(emailValue) && users.get(emailValue) === passwordValue) {
+                    alert("Login Successfully!");
+                    emailField.value = "";
+                    passwordField.value = "";
+                    setTimeout(() => {
+                        window.location.href = 'http://localhost:5500/public/Nike.html';
+                    }, 0);
+                } else {
+                    errorAlert.classList.remove('hidden-alert-login');
+                 
+                }
+            }
+
+
+
+
+</script>
+</body>
+
+</html>

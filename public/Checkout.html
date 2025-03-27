@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        
+        }
+    </style>
+</head>
+<body class="font-mono"> 
+    
+    <section class="flex flex-col min-h-screen py-12 max-md:py-12 px-5">
+    <div class="flex flex-col gap-5 w-full px-10">
+        <h1 class="text-center text-4xl font-medium">CheckOut Section</h1>
+        <button onclick="window.location.href='http://localhost:5500/public/Nike.html'" class="hover:underline">Back</button>
+        <h1 class="font-bold text-3xl">Review your Order</h1>
+        <div class="js-checkout-total text-start  text-1xl font-bold max-md:text-center">
+            0
+        </div>
+        <hr class="border-2">
+    </div>
+        <div class="main-ctn flex flex-row w-full py-10">
+            <div class="js-checkout-ctn flex pl-10 flex-wrap h-full w-[1200px] gap-5 max-md:flex-col max-md:w-full max-md:px-5">
+             </div>
+             <div class="order-summary w-[450px] bg-slate-100 mr-20 text-left py-4 px-5 rounded-lg shadow-lg">
+                <h1 class="font-bold text-2xl">Order Summary</h1>
+                <p>Subtotal</p>
+                <p>Shipping</p>
+                <p>Tax</p>
+                <p>Total</p>
+             </div>
+        </div>
+    
+   
+    </section>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../scripts/checkout.js"></script>
+</body>
+</html>

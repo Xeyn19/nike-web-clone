@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+      *{
+        scroll-behavior: smooth;
+      }
+    </style>
+    <title>Nike</title>
+</head>
+    <body>
+      <header>
+        <div class="navbar bg-orange-400">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-xl">Nike</a>
+            <img src="../images/nike.png" alt="" class="w-10 h-10">
+          </div>
+          <div class="flex-none">
+            <div class="dropdown dropdown-end">
+              <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                <div class="indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  <div class="badge badge-sm indicator-item js-cart-items-total"></div>
+                </div>
+              </div>
+              <div
+                tabindex="0"
+                class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
+                <div class="card-body">
+                  <div id="cart-items" class="js-total-cart-items">0 items</div>
+                  <span class="text-info">Subtotal: $999</span>
+                  <div class="card-actions">
+                    <button class="btn bg-orange-500 btn-block hover:bg-orange-700" onclick="window.location.href='http://localhost:5500/public/Checkout.html'">View cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown dropdown-end">
+              <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                <div class="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src="../images/edgar.jpg" />
+                </div>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                <li>
+                  <a class="justify-between">
+                    Profile
+                    <span class="badge">New</span>
+                  </a>
+                </li>
+                <li><a>Settings</a></li>
+                <li><a href="http://localhost:5500/public/Login.html">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </header>
+        <section class="max-md:flex-col min-h-screen flex xl:px-2 max-lg:flex-col">
+            <div class="flex w-1/2 flex-col justify-start items-start pl-6 gap-2 max-md:w-full max-md:items-center max-md:px-5 xl:mt-10 max-lg:w-full">
+              <p class="text-orange-500 text-xl my-2 max-md:text-center xl:mt-2 ">Our Summer Collections</p>
+              <h1 class="h1-home text-8xl my-4 .font-h1 max-md:text-center font-medium max-md:text-6xl"> <span>The New Arrival</span><br> <span class="text-orange-600">Nike</span> Shoes</h1>
+              <p class="my-4 text-gray-500 text-base">Discover stylish Nike arrivals, quality comfort, and innovation for your active life.</p>
+              <button class="mt-4 py-3 px-6 text-white  bg-orange-600 rounded-full flex justify-center items-center gap-3 font-medium
+              hover:px-11 transition-all duration-300 ease-in-out
+               hover:bg-orange-700 hover:font-medium js-shop-now-btn " onclick="window.location.href='#latest-ctn'">Shop now <img src="../images/arrow-right.png " class="w-5 h-5 " alt=""></button>
+              <div class="stats shadow mt-14 max-md:flex-col max-md:flex max-md:mb-20 ">
+                <div class="stat place-items-center">
+                  <div class="stat-title">Downloads</div>
+                  <div class="stat-value">31K</div>
+                  <div class="stat-desc">From January 1st to February 1st</div>
+                </div>
+              
+                <div class="stat place-items-center">
+                  <div class="stat-title">Users</div>
+                  <div class="stat-value text-secondary ">4,200</div>
+                  <div class="stat-desc text-secondary">↗︎ 40 (2%)</div>
+                </div>
+              
+                <div class="stat place-items-center">
+                  <div class="stat-title">New Registers</div>
+                  <div class="stat-value">1,200</div>
+                  <div class="stat-desc">↘︎ 90 (14%)</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center items-center xl:min-h-screen
+             bg-[url('../images/blob-haikei.png')] bg-cover bg-center h-screen w-1/2 max-md:w-full max-lg:w-full">
+              <img src="../images/Jordan1.png" 
+                   alt="Jordan 1" 
+                   class="w-[540px] h-[632px] ">
+            </div>
+        </section>
+        <section class="flex min-h-60 px-16 py-20  flex-col max-md:pt-10 gap-5 max-md:h-full max-md:p-2">
+            <h1 class="text-center block text-4xl font-bold">Featured</h1>
+            <div class="diff aspect-[13/9] w-full min-h-screen rounded-md">
+              <div class="diff-item-1">
+                <div class="bg-[url('../images/featured.png')] bg-cover bg-center
+                text-primary-content grid place-content-center text-9xl font-black max-md:text-4xl text-orange-500">
+                  QUALITY SHOES.
+                </div>
+              
+              </div>
+              <div class="diff-item-2">
+                <div class="bg-[url('../images/featured1.jpg')] bg-cover bg-center   grid place-content-center text-9xl font-black max-md:text-4xl text-slate-50">QUALITY SHOES.</div>
+              </div>
+              <div class="diff-resizer"></div>
+            </div>
+        </section>
+        <section class="flex min-h-80 flex-col text-center p-10 max-md:p-10 mb-40" id="latest-ctn">
+          <!-- Add to cart modal -->
+            <h1 class="my-7 text-4xl font-bold max-md:text-2xl">The Latest & Greatest</h1>
+            <div id="js-container-latest-shoes"class="carousel carousel-end rounded-box gap-5 bg-slate-300 shadow-xl  p-5 font-serif">
+            </div>
+        </section>
+        <footer class="footer bg-base-200 text-base-content py-20 px-10  bg-neutral text-white max-md:flex max-md:justify-center max-md:flex-col max-md:items-center">
+          <nav>
+            <h6 class="footer-title">Services</h6>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
+          </nav>
+          <nav>
+            <h6 class="footer-title">Company</h6>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+          </nav>
+          <nav>
+            <h6 class="footer-title">Legal</h6>
+            <a class="link link-hover">Terms of use</a>
+            <a class="link link-hover">Privacy policy</a>
+            <a class="link link-hover">Cookie policy</a>
+          </nav>
+          <form>
+            <h6 class="footer-title">Newsletter</h6>
+            <fieldset class="form-control w-80">
+              <label class="label">
+                <span class="label-text text-white">Enter your email address</span>
+              </label>
+              <div class="join">
+                <input
+                  type="text"
+                  placeholder="username@site.com"
+                  class="input input-bordered join-item" />
+                <button class="btn btn-primary join-item">Subscribe</button>
+              </div>
+            </fieldset>
+          </form>
+        </footer>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script type="module" src="../scripts/Nike.js"></script>
+    </body>
+
+</html>
