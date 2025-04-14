@@ -1,6 +1,6 @@
-import { carts , removeFromCart , updateCartQuantity, updateQuantity} from "/data/cart.js";
-import { latestShoes } from "/data/Latest.js";
-import '/data/cart oop.js';
+import { carts , removeFromCart , updateCartQuantity, updateQuantity} from "/public/data/cart.js";
+import { latestShoes } from "/public/data/Latest.js";
+import '/public/data/cart oop.js';
 
 let checkOutHTML = '';
 

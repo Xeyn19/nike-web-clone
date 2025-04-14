@@ -1,5 +1,5 @@
-import { latestShoes } from "/data/Latest.js";
-import { carts, showAddToCartModal, updateCartQuantity} from "/data/cart.js";
+import { latestShoes } from "/public/data/Latest.js";
+import { carts, showAddToCartModal, updateCartQuantity} from "/public/data/cart.js";
 
 let latestShoesHTML = '';
 latestShoes.forEach((shoes) => {
