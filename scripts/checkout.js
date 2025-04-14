@@ -15,6 +15,7 @@ carts.forEach((cartItem) => {
         }
     });
     
+    
 checkOutHTML += `
        <div class="flex flex-row rounded-lg shadow-2xl bg-slate-200 border-none border w-[450px] py-5 px-2 gap-5">
                 <div class="shoePic">
